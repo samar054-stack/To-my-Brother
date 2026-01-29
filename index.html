@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For My Dear Brother Abdullah 🤍</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🤍 For You 🤍</h1>
+  <div class="meme">🥺</div>
+  <p id="text">Dear Abdullah,</p>
+
+  <button onclick="nextLine()">Next ✨</button>
+  <button onclick="sendHug()">CLICK 🫂</button>
+
+  <div id="hugArea"></div>
+</div>
+
+<script>
+let lines = [
+  "You are my dear brother, and your presence in my life truly matters to me 🤍",
+  "Your being here or not being here makes a HUGE difference to my heart…",
+  "The words I said were never what I truly meant 🥺",
+  "I was emotionally overwhelmed and spoke without thinking…",
+  "What I really want is our old, genuine friendship back 💭",
+  "My intention was never to hurt you, not even 1%…",
+  "You are extremely important to me, more than you realize 🤍",
+  "I am really really sorry… 🥺👉👈",
+  "*Imagine a sad puppy with watery eyes saying sorry* 🐶🥹",
+  "*Now imagine a cat holding its paws together begging for forgiveness* 🐱🙏",
+  "I promise this will never happen again 🌸",
+  "I never want you to be hurt or affected because of me…",
+  "I never want to end this friendship, ever 🤍",
+  "My cutie, handsome, lovely boy 😌",
+  "My very precious brother 🫂🤍",
+  "I am really really very sorry 🥺👉👈"
+];
+
+let i = 0;
+function nextLine(){
+  if(i < lines.length){
+    document.getElementById("text").innerHTML = lines[i];
+    i++;
+  }
+}
+
+function sendHug(){
+  document.getElementById("hugArea").innerHTML =
+    "<div class='hug'>🫂</div><p>ALWAYS HERE FOR YOU — Your little sister Samar 🤍</p>";
+
+  for(let j=0; j<14; j++){
+    let h = document.createElement("div");
+    h.className = "heart";
+    h.innerHTML = "🤍";
+    h.style.left = Math.random()*100 + "vw";
+    h.style.animationDuration = (3 + Math.random()*2) + "s";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(), 5000);
+  }
+}
+</script>
+
+</body>
+</html>
